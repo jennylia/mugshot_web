@@ -19,6 +19,15 @@ header {
   padding-left:10px;
 }
 
+#rant {
+  color:white;
+  text-decoration: none;
+}
+
+#rant:hover {
+  color:orange;
+}
+
 p {
   font-family: 'Arial' sans-serif;
 }
