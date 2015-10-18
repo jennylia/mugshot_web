@@ -37,6 +37,10 @@ canvas {
   margin-top: 15px;
 }
 
+.container{
+  height: 600px;
+  padding-top: 50px;
+}
 .group {
   margin-top: 5px;
   margin-bottom: 5px;
