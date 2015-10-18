@@ -91,8 +91,7 @@ $(function() {
            console.log(mugShotPhoto)
            predict(mugShotPhoto,$("#verifyOwner").val());
         }
-
-
+        location.reload();
       }
     });
   }
