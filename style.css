@@ -3,7 +3,13 @@
   src: url('./fonts/GrandHotel-Regular.otf');
 }
 
+@font-face {
+  font-family: Barrio-Regular;
+  src: url('./fonts/Barrio-Regular.otf');
+}
+
 header {
+  position:relative;
   background: black;
   font-family: 'GrandHotel-Regular' sans-serif;
   font-size: 2.5em;
@@ -11,6 +17,25 @@ header {
   height: 50px;
   color:white;
   padding-left:10px;
+}
+
+p {
+  font-family: 'Arial' sans-serif;
+}
+
+#photo-booth {
+  position:relative;
+  border:solid black;
+  width: 100%;
+  height: 500px;
+  text-align: center;
+  background: rgb(27,172,212);
+  color:white;
+}
+
+#pb-title {
+  position:relative;
+  font-family: 'Barrio-Regular' sans-serif;
 }
 
 .container {
