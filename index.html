@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="http://code.jquery.com/jquery.min.js"></script>
+    <script src="http://anthonyterrien.com/js/jquery.knob.js"></script>
+    <script src="http://getbootstrap.com/dist/js/bootstrap.min.js"></script>
+    <script src="app.js"></script>
+    <script src="gifie.js"></script>
+    <script src="webcam.min.js"></script>
+    <script src="webcam.js"></script>
+
+    <script src="sweetalert.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="sweetalert.css">
+
+    <title>Jenny's Mug Stand</title>
+    <script type="text/javascript" src="clarifai-basic.js"></script>
+    <script type="text/javascript" src="train-mugs.js"></script>
+  </head>
+  <body>
+
+    <header>MugShot</header>
+      <div id="photo-booth">
+        <h1 id="pb-title">Mug Photo Booth</h1>
+        <p>Mug gif to find out who it belongs to</p>
+        <h2><a id="rant" href="./twitter2.html">Go rant about your lost mug</a></h2>
+        <p><a href="https://github.com/eirikb/gifie">The Gifie Source @ GitHub</a></p>
+        <h2 id="imgur-upload">Processing ... Box busy :|</h2>
+        <p id="answers"></p>
+        <br />
+        Quality
+        <div class="onoffswitch">
+          <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch" checked>
+          <label class="onoffswitch-label" for="myonoffswitch">
+            <span class="onoffswitch-inner"></span>
+            <span class="onoffswitch-switch"></span>
+          </label>
+        </div>
+        <br />
+        Length
+        <div class="lengthswitch">
+          <input type="checkbox" name="lengthswitch" class="lengthswitch-checkbox" id="mylengthswitch" checked>
+          <label class="lengthswitch-label" for="mylengthswitch">
+            <span class="lengthswitch-inner"></span>
+            <span class="lengthswitch-switch"></span>
+          </label>
+        </div>
+        <br />
+        <div class="group">
+          <label>Training</label>
+          <p>You must fill out the owner's name in training mode.</p>
+          <label>Mug Owner's Name</label>
+          <br />
+                <!-- <label class="btn btn-sm btn-default"> -->
+              <input id="mugOwner" type="text">
+          <br />
+            <!-- </label> -->
+        </div>
+      <div class="group">
+        <label>Train me</label>
+        <button onclick="train()">Train again</button>
+      </div>
+
+      <div class="group">
+          <label>Belongs to?</label>
+                <!-- <label class="btn btn-sm btn-default"> -->
+              <input id="verifyOwner" type="text"> 
+            <!-- </label> -->
+        </div>
+        <div class="group">
+          <div id="error" class="alert alert-danger">
+            gifie does not work with your browser
+          </div>
+      <!--     <button id="record" type="button" class="btn btn-default btn-lg btn-block">
+            <span class="glyphicon glyphicon-facetime-video"></span> 
+            <span class="info">Record Mug</span>
+          </button> -->
+
+            <script src="webcam.js"></script>
+
+    <div id="my_camera" style="width:320px; height:240px; color:blue"></div>
+    <div id="my_result"></div>
+
+    <script language="JavaScript">
+        Webcam.attach( '#my_camera' );
+
+        function take_snapshot() {
+            // Webcam.snap( function(data_uri) {
+            //     document.getElementById('my_result').innerHTML = '<img src="'+data_uri+'"/>';
+            // } );
+
+        }
+
+
+        // imgurUpload(data_uri);
+    </script>
+
+    <a href="javascript:void(take_snapshot())" id="recordCamera">Take Snapshot</a>
+
+
+          <input id="countdown" type="text" data-max="200" data-displayInput="false" data-readOnly="true">
+          <input id="loader" type="text" data-cursor="true" data-displayInput="false" data-readOnly="true">
+          <div>
+            <a id="gifLink" target="_blank">
+              <img id="gif" class="img-rounded">
+            </a>
+          </div>
+          <div id="imgur">
+            <a class="btn btn-default" href="https://api.imgur.com/oauth2/authorize?response_type=token">
+              <span class="glyphicon glyphicon-cloud-upload"></span>
+              <span class="glyphicon glyphicon-user"></span>
+              Post to imgur 
+            </a>
+            <a class="btn btn-default" href="#">
+              <span class="glyphicon glyphicon-cloud-upload"></span>
+              Post anonymously to imgur 
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+  </body>
+</html>

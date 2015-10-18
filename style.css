@@ -1,0 +1,251 @@
+@font-face {
+  font-family: GrandHotel-Regular;
+  src: url('./fonts/GrandHotel-Regular.otf');
+}
+
+@font-face {
+  font-family: Barrio-Regular;
+  src: url('./fonts/Barrio-Regular.otf');
+}
+
+header {
+  position:relative;
+  background: black;
+  font-family: 'GrandHotel-Regular' sans-serif;
+  font-size: 2.5em;
+  width: 100%;
+  height: 50px;
+  color:white;
+  padding-left:10px;
+}
+
+#rant {
+  color:white;
+  text-decoration: none;
+}
+
+#rant:hover {
+  color:orange;
+}
+
+p {
+  font-family: 'Arial' sans-serif;
+}
+
+#photo-booth {
+  position:relative;
+  width: 100%;
+  height:100%;
+  text-align: center;
+  background: rgb(27,172,212);
+  color:white;
+}
+
+#pb-title {
+  position:relative;
+  font-family: 'Barrio-Regular' sans-serif;
+}
+
+.container {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.container > div {
+  width: 330px;
+  margin: 0 auto;
+}
+
+.recording, .recording:hover, .recording:active, .recording:focus {
+  color: red;
+}
+
+img {
+  margin-left: 5px;
+  margin-top: 5px;
+}
+
+#spin {
+  width: 330px;
+  height: 240px;
+}
+
+#record {
+  user-select: none;
+  -o-user-select:none;
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  outline: none;
+}
+
+canvas {
+  margin: 0 auto;
+  display: block;
+  margin-top: 15px;
+}
+
+.group {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+#imgur a {
+  margin-top: 5px;
+  color: #85bf25;
+}
+
+.label {
+  position: relative;
+  display: inline-block;
+  margin-right: 75px;
+  vertical-align: top;
+  font-size:1em;
+  top:5px;
+}
+
+/*-------*/
+.onoffswitch {
+  position: relative; width: 115px;
+  -webkit-user-select:none; -moz-user-select:none; -ms-user-select: none;
+  margin:auto;
+}
+.onoffswitch-checkbox {
+  display: none;
+}
+.onoffswitch-label {
+  display: block; overflow: hidden; cursor: pointer;
+  border: 2px solid #999999; border-radius: 50px;
+}
+.onoffswitch-inner {
+  display: block; width: 200%; margin-left: -100%;
+  transition: margin 0.3s ease-in 0s;
+}
+.onoffswitch-inner:before, .onoffswitch-inner:after {
+  display: block; float: left; width: 50%; height: 20px; padding: 0; line-height: 20px;
+  font-size: 15px; color: white; font-family: Trebuchet, Arial, sans-serif; font-weight: bold;
+  box-sizing: border-box;
+}
+.onoffswitch-inner:before {
+  content: "BAD";
+  padding-left: 10px;
+  background-color: #FFAE00; color: #FFFFFF;
+}
+.onoffswitch-inner:after {
+  content: "CRAP";
+  padding-right: 10px;
+  background-color: #EEEEEE; color: #999999;
+  text-align: right;
+}
+.onoffswitch-switch {
+  display: block; width: 18px; margin: 1px;
+  background: #FFFFFF;
+  position: absolute; top: 0; bottom: 0;
+  right: 91px;
+  border: 2px solid #999999; border-radius: 50px;
+  transition: all 0.3s ease-in 0s;
+}
+.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-inner {
+  margin-left: 0;
+}
+.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {
+  right: 0px;
+}
+/*-------*/
+
+.lengthswitch {
+  position: relative; width: 115px;
+  -webkit-user-select:none; -moz-user-select:none; -ms-user-select: none;
+  margin:auto;
+}
+.lengthswitch-checkbox {
+  display: none;
+}
+.lengthswitch-label {
+  display: block; overflow: hidden; cursor: pointer;
+  border: 2px solid #999999; border-radius: 50px;
+}
+.lengthswitch-inner {
+  display: block; width: 200%; margin-left: -100%;
+  transition: margin 0.3s ease-in 0s;
+}
+.lengthswitch-inner:before, .lengthswitch-inner:after {
+  display: block; float: left; width: 50%; height: 20px; padding: 0; line-height: 20px;
+  font-size: 15px; color: white; font-family: Trebuchet, Arial, sans-serif; font-weight: bold;
+  box-sizing: border-box;
+}
+.lengthswitch-inner:before {
+  content: "SHORT";
+  padding-left: 10px;
+  background-color: #FFAE00; color: #FFFFFF;
+}
+.lengthswitch-inner:after {
+  content: "SHORTER";
+  padding-right: 10px;
+  background-color: #EEEEEE; color: #999999;
+  text-align: right;
+}
+.lengthswitch-switch {
+  display: block; width: 18px; margin: 1px;
+  background: #FFFFFF;
+  position: absolute; top: 0; bottom: 0;
+  right: 91px;
+  border: 2px solid #999999; border-radius: 50px;
+  transition: all 0.3s ease-in 0s;
+}
+.lengthswitch-checkbox:checked + .lengthswitch-label .lengthswitch-inner {
+  margin-left: 0;
+}
+.lengthswitch-checkbox:checked + .lengthswitch-label .lengthswitch-switch {
+  right: 0px;
+}
+/*---*/
+
+/*---*/
+.trainswitch {
+  position: relative; width: 115px;
+  -webkit-user-select:none; -moz-user-select:none; -ms-user-select: none;
+  margin:auto;
+}
+.trainswitch-checkbox {
+  display: none;
+}
+.trainswitch-label {
+  display: block; overflow: hidden; cursor: pointer;
+  border: 2px solid #999999; border-radius: 50px;
+}
+.trainswitch-inner {
+  display: block; width: 200%; margin-left: -100%;
+  transition: margin 0.3s ease-in 0s;
+}
+.trainswitch-inner:before, .trainswitch-inner:after {
+  display: block; float: left; width: 50%; height: 20px; padding: 0; line-height: 20px;
+  font-size: 15px; color: white; font-family: Trebuchet, Arial, sans-serif; font-weight: bold;
+  box-sizing: border-box;
+}
+.trainswitch-inner:before {
+  content: "YES";
+  padding-left: 10px;
+  background-color: #FFAE00; color: #FFFFFF;
+}
+.trainswitch-inner:after {
+  content: "NO";
+  padding-right: 10px;
+  background-color: #EEEEEE; color: #999999;
+  text-align: right;
+}
+.trainswitch-switch {
+  display: block; width: 18px; margin: 1px;
+  background: #FFFFFF;
+  position: absolute; top: 0; bottom: 0;
+  right: 91px;
+  border: 2px solid #999999; border-radius: 50px;
+  transition: all 0.3s ease-in 0s;
+}
+.trainswitch-checkbox:checked + .trainswitch-label .trainswitch-inner {
+  margin-left: 0;
+}
+.trainswitch-checkbox:checked + .trainswitch-label .trainswitch-switch {
+  right: 0px;
+}
+/*--*/
