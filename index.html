@@ -27,60 +27,49 @@
       <div id="photo-booth">
         <h1 id="pb-title">Mug Photo Booth</h1>
         <p>Mug gif to find out who it belongs to</p>
-        <h2><a href="./twitter2.html">Go rant about your lost mug</a></h2>
+        <h2><a id="rant" href="./twitter2.html">Go rant about your lost mug</a></h2>
         <p><a href="https://github.com/eirikb/gifie">The Gifie Source @ GitHub</a></p>
         <h2 id="imgur-upload">Processing ... Box busy :|</h2>
         <p id="answers"></p>
-        <div class="group">
-          <label>Quality</label>
-          <div class="btn-group" data-toggle="buttons">
-            <label class="btn btn-sm btn-default">
-              <input id="quality-bad" name="quality" type="radio"> Bad
-            </label>
-            <label class="btn btn-sm btn-default active">
-              <input name="quality" type="radio" checked="checked"> Crap
-            </label>
-          </div>
+        <br />
+        Quality
+        <div class="onoffswitch">
+          <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch" checked>
+          <label class="onoffswitch-label" for="myonoffswitch">
+            <span class="onoffswitch-inner"></span>
+            <span class="onoffswitch-switch"></span>
+          </label>
         </div>
-        <div class="group">
-          <label>Length</label>
-          <div class="btn-group" data-toggle="buttons">
-            <label class="btn btn-sm btn-default active">
-              <input id="length-short" name="length" type="radio" checked="checked"> Short
-            </label>
-            <label class="btn btn-sm btn-default">
-              <input name="length" type="radio"> Shorter
-            </label>
-        
-          </div>
-       
+        <br />
+        Length
+        <div class="lengthswitch">
+          <input type="checkbox" name="lengthswitch" class="lengthswitch-checkbox" id="mylengthswitch" checked>
+          <label class="lengthswitch-label" for="mylengthswitch">
+            <span class="lengthswitch-inner"></span>
+            <span class="lengthswitch-switch"></span>
+          </label>
+        </div>
+        <br />
         <div class="group">
           <label>Training</label>
-          <label>You must fill out the owner's name in training mode.</label>
-
+          <p>You must fill out the owner's name in training mode.</p>
           <label>Mug Owner's Name</label>
+          <br />
                 <!-- <label class="btn btn-sm btn-default"> -->
-              <input id="mugOwner" type="text"> 
+              <input id="mugOwner" type="text">
+          <br />
             <!-- </label> -->
         </div>
-
-
       <div class="group">
         <label>Train me</label>
-
         <button onclick="train()">Train again</button>
       </div>
 
       <div class="group">
           <label>Belongs to?</label>
-          <label></label>
-
-          <label>Who are you trying to find out?</label>
                 <!-- <label class="btn btn-sm btn-default"> -->
               <input id="verifyOwner" type="text"> 
             <!-- </label> -->
-        </div>
-
         </div>
         <div class="group">
           <div id="error" class="alert alert-danger">
