@@ -12,6 +12,9 @@
     <script src="app.js"></script>
     <script src="gifie.js"></script>
 
+    <script src="sweetalert.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="sweetalert.css">
+
 
 
 
@@ -60,14 +63,24 @@
                 <!-- <label class="btn btn-sm btn-default"> -->
               <input id="mugOwner" type="text"> 
             <!-- </label> -->
-       </div>
+        </div>
 
 
-      <div>
+      <div class="group">
         <label>Train me</label>
 
-        <button onclick="carSubmit()">Submit Car</button>
+        <button onclick="train()">Train again</button>
       </div>
+
+      <div class="group">
+          <label>Belongs to?</label>
+          <label></label>
+
+          <label>Who are you trying to find out?</label>
+                <!-- <label class="btn btn-sm btn-default"> -->
+              <input id="verifyOwner" type="text"> 
+            <!-- </label> -->
+        </div>
 
         </div>
         <div class="group">

@@ -23,17 +23,20 @@ function negative(imgurl) {
 }
 
 function train() {
+  setTimeout(samplePositives,4000);
+  setTimeout(sampleNegatives,4000);
   clarifai.train('jennylian', callback).then(
     promiseResolved,
     promiseRejected
   );
+
 }
 
 function displayTags(url){
   // var picUrl = "http://www.clarifai.com/static/img_ours/metro-north.jpg";
   // var picUrl = "http://i.imgur.com/bphqBAT.jpg";
   var picUrl = url;
-  var appToken = "QL5sg8NV0Q9rhdJhH1lZapL0fydnHF";
+  var appToken = "3KUcnph6SHQk9wLX80nMRTta70trev";
   var baseUrl = "https://api.clarifai.com/v1/tag/?url=";
   $.ajax({
          url: baseUrl + picUrl,
@@ -51,21 +54,29 @@ function displayTags(url){
  
 }
 
-function predict(imgurl) {
+function predict(imgurl, owner) {
+  console.log(imgurl);
   clarifai.predict(imgurl, 'jennylian', callback)
   .then(function(obj) {
+      console.log(obj.score);
+
       if (obj.score < 0.6) {
-        swal({
-          title: 'Go ahead and use it!',
-          text: 'This is not jenny lian\'s mug',
-          imageUrl: obj.url
-        });
+        // swal({
+        //   title: 'Go ahead and use it!',
+        //   text: 'This is not jenny lian\'s mug',
+        //   imageUrl: obj.url
+        // });
+        console.log(obj.score);
+        alert("Use it's not jenny's");
       } else {
-        swal({
-          title: 'No touch allowed!',
-          text: 'This is MINE',
-          imageUrl: obj.url
-        });
+        // swal({
+        //   title: 'No touch allowed!',
+        //   text: 'This is MINE',
+        //   imageUrl: obj.url
+        // });
+
+        alert("Don't use it!");
+
       }
     },
     promiseRejected

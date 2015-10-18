@@ -67,18 +67,23 @@ $(function() {
       success: function(result) {
 
         var id = result.data.id;
-        var mugShotPhoto = "https://imgur.com/" + id +".jpg"
+        var mugShotPhoto = "https://i.imgur.com/" + id +".jpg"
 
-        if ($("#mugOwner").val() === ""){
+        if (($("#mugOwner").val() === "") && ($("#verifyOwner").val() ==="")){
    
           displayTags(mugShotPhoto);
-        }else{
+        }else if ($("#verifyOwner").val() ===""){
           alert($("#mugOwner").val() + "\'s mug is being trained...");
           clarifai.positive(mugShotPhoto,$("#mugOwner").val(), callback).then(
             promiseResolved,
             promiseRejected
           );
+        }else{
+           console.log(mugShotPhoto)
+           predict(mugShotPhoto,$("#verifyOwner").val());
         }
+
+
       }
     });
   }
