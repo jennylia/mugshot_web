@@ -56,7 +56,11 @@ function displayTags(url){
 
 function predict(imgurl, owner) {
   console.log(imgurl);
-  clarifai.predict(imgurl, 'jennylian', callback)
+  // var picUrl = "http://www.clarifai.com/static/img_ours/metro-north.jpg";
+    var picUrl = "https://i.imgur.com/WmP5xSN.png";
+    setTimeout(function(){console.log("wait...")},4000);
+
+  clarifai.predict(picUrl, 'jennylian', callback)
   .then(function(obj) {
       console.log(obj.score);
 

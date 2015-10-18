@@ -6,12 +6,12 @@ $(function() {
   var $info = $record.find('.info');
   var $qualityBad = $('#quality-bad');
   var $ownerName = $('#mugOwner').val();
-
+  var $recordCamera = $('#recordCamera');
   var $lengthShort = $('#length-short');
   var $group = $('.group');
   var $countdown = $('#countdown');
   var $loader = $('#loader');
-  var token = extractToken(document.location.hash);
+  var token = localStorage.token = extractToken(document.location.hash);
   var $imgur = $('#imgur');
   var $imgurOauth = $('#imgur a:first');
   var $imgurAnon = $('#imgur a:last');
@@ -43,7 +43,16 @@ $(function() {
     return !!match && match[1];
   }
 
-  function imgurUpload(token) {
+  $recordCamera.click(function() {
+    Webcam.snap( function(data_uri) {
+            document.getElementById('my_result').innerHTML = '<img src="'+data_uri+'"/>';
+            data_uri = data_uri.slice(data_uri.indexOf(",") + 1);
+            imgurUpload(data_uri);
+    });
+  });
+
+  function imgurUpload(data) {
+
     $imgurUpload.show();
     $group.hide();
 
@@ -61,7 +70,7 @@ $(function() {
         Accept: 'application/json'
       },
       data: {
-        image: localStorage.dataBase64,
+        image: data,
         type: 'base64'
       },
       success: function(result) {
@@ -160,22 +169,22 @@ $(function() {
     var lengthShort = $lengthShort.prop('checked');
 
     gifie.init({
-      quality: qualityBad ? 10 : 30,
-      length: lengthShort ? 15 : 5
+      quality: qualityBad ? 1 : 1,
+      length: lengthShort ? 1 : 1
     });
   }
 
-  $record.click(function() {
+  $record.click(function(data) {
     loading();
-    $countdown.val($countdown.data('max')).trigger('change');
-    var interval = setInterval(function() {
-      $countdown.val($countdown.val() - 1).trigger('change');
-      if ($countdown.val() > 0) return;
+    // $countdown.val($countdown.data('max')).trigger('change');
+    // var interval = setInterval(function() {
+    //   $countdown.val($countdown.val() - 1).trigger('change');
+    //   if ($countdown.val() > 0) return;
 
-      clearInterval(interval);
-      $countdown.knob().hide();
+    //   clearInterval(interval);
+    //   $countdown.knob().hide();
       record();
-    }, 10);
+    // }, 10);
   });
 
   gifie.prepare();
