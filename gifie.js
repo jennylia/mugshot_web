@@ -3,8 +3,8 @@ gifie = (function() {
   var canvas = $('<canvas>')[0];
   var ctx = canvas.getContext('2d');
   var worker = new Worker('worker.js');
-  var width = 320;
-  var height = 240;
+  var width = 640;
+  var height = 480;
   var delay = 200;
   var maxFrames, frames;
 

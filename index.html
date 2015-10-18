@@ -11,6 +11,11 @@
     <script src="http://getbootstrap.com/dist/js/bootstrap.min.js"></script>
     <script src="app.js"></script>
     <script src="gifie.js"></script>
+    <script src="webcam.min.js"></script>
+    <script src="webcam.js"></script>
+
+    <script src="sweetalert.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="sweetalert.css">
 
     <title>Jenny's Mug Stand</title>
     <script type="text/javascript" src="clarifai-basic.js"></script>
@@ -49,29 +54,58 @@
           <label>You must fill out the owner's name in training mode.</label>
 
           <label>Mug Owner's Name</label>
-          <!-- <label class="btn btn-sm btn-default"> -->
-          <input id="mugOwner" type="text">
-          <!-- </label> -->
+                <!-- <label class="btn btn-sm btn-default"> -->
+              <input id="mugOwner" type="text"> 
+            <!-- </label> -->
         </div>
-        <div class="group">
-          <label>Length</label>
-          <div class="btn-group" data-toggle="buttons">
-            <label class="btn btn-sm btn-default active">
-              <input id="length-short" name="length" type="radio" checked="checked"> Short
-            </label>
-            <label class="btn btn-sm btn-default">
-              <input name="length" type="radio"> Shorter
-            </label>
-          </div>
+
+
+      <div class="group">
+        <label>Train me</label>
+
+        <button onclick="train()">Train again</button>
+      </div>
+
+      <div class="group">
+          <label>Belongs to?</label>
+          <label></label>
+
+          <label>Who are you trying to find out?</label>
+                <!-- <label class="btn btn-sm btn-default"> -->
+              <input id="verifyOwner" type="text"> 
+            <!-- </label> -->
         </div>
         <div class="group">
           <div id="error" class="alert alert-danger">
             gifie does not work with your browser
           </div>
-          <button id="record" type="button" class="btn btn-default btn-lg btn-block">
+      <!--     <button id="record" type="button" class="btn btn-default btn-lg btn-block">
             <span class="glyphicon glyphicon-facetime-video"></span> 
             <span class="info">Record Mug</span>
-          </button>
+          </button> -->
+
+            <script src="webcam.js"></script>
+
+    <div id="my_camera" style="width:320px; height:240px; color:blue"></div>
+    <div id="my_result"></div>
+
+    <script language="JavaScript">
+        Webcam.attach( '#my_camera' );
+
+        function take_snapshot() {
+            // Webcam.snap( function(data_uri) {
+            //     document.getElementById('my_result').innerHTML = '<img src="'+data_uri+'"/>';
+            // } );
+
+        }
+
+
+        // imgurUpload(data_uri);
+    </script>
+
+    <a href="javascript:void(take_snapshot())" id="recordCamera">Take Snapshot</a>
+
+
           <input id="countdown" type="text" data-max="200" data-displayInput="false" data-readOnly="true">
           <input id="loader" type="text" data-cursor="true" data-displayInput="false" data-readOnly="true">
           <div>
