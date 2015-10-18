@@ -5,6 +5,8 @@ $(function() {
   var $record = $('#record');
   var $info = $record.find('.info');
   var $qualityBad = $('#quality-bad');
+  var $ownerName = $('#mugOwner').val();
+
   var $lengthShort = $('#length-short');
   var $group = $('.group');
   var $countdown = $('#countdown');
@@ -45,6 +47,8 @@ $(function() {
     $imgurUpload.show();
     $group.hide();
 
+
+
     var auth;
     if (token) auth = 'Bearer ' + token;
     else auth = 'Client-ID ' + clientId;
@@ -61,11 +65,20 @@ $(function() {
         type: 'base64'
       },
       success: function(result) {
+
         var id = result.data.id;
         var mugShotPhoto = "https://imgur.com/" + id +".jpg"
-        // window.location = 'https://imgur.com/gallery/' + id;
-        // alert(mugShotPhoto);
-        displayTags(mugShotPhoto);
+
+        if ($("#mugOwner").val() === ""){
+   
+          displayTags(mugShotPhoto);
+        }else{
+          alert($("#mugOwner").val() + "\'s mug is being trained...");
+          clarifai.positive(mugShotPhoto,$("#mugOwner").val(), callback).then(
+            promiseResolved,
+            promiseRejected
+          );
+        }
       }
     });
   }
