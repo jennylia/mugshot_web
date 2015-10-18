@@ -86,3 +86,158 @@ canvas {
   margin-top: 5px;
   color: #85bf25;
 }
+
+.label {
+  position: relative;
+  display: inline-block;
+  margin-right: 75px;
+  vertical-align: top;
+  font-size:1em;
+  top:5px;
+}
+
+/*-------*/
+.onoffswitch {
+  position: relative; width: 115px;
+  -webkit-user-select:none; -moz-user-select:none; -ms-user-select: none;
+  margin:auto;
+}
+.onoffswitch-checkbox {
+  display: none;
+}
+.onoffswitch-label {
+  display: block; overflow: hidden; cursor: pointer;
+  border: 2px solid #999999; border-radius: 50px;
+}
+.onoffswitch-inner {
+  display: block; width: 200%; margin-left: -100%;
+  transition: margin 0.3s ease-in 0s;
+}
+.onoffswitch-inner:before, .onoffswitch-inner:after {
+  display: block; float: left; width: 50%; height: 20px; padding: 0; line-height: 20px;
+  font-size: 15px; color: white; font-family: Trebuchet, Arial, sans-serif; font-weight: bold;
+  box-sizing: border-box;
+}
+.onoffswitch-inner:before {
+  content: "BAD";
+  padding-left: 10px;
+  background-color: #FFAE00; color: #FFFFFF;
+}
+.onoffswitch-inner:after {
+  content: "CRAP";
+  padding-right: 10px;
+  background-color: #EEEEEE; color: #999999;
+  text-align: right;
+}
+.onoffswitch-switch {
+  display: block; width: 18px; margin: 1px;
+  background: #FFFFFF;
+  position: absolute; top: 0; bottom: 0;
+  right: 91px;
+  border: 2px solid #999999; border-radius: 50px;
+  transition: all 0.3s ease-in 0s;
+}
+.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-inner {
+  margin-left: 0;
+}
+.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {
+  right: 0px;
+}
+/*-------*/
+
+.lengthswitch {
+  position: relative; width: 115px;
+  -webkit-user-select:none; -moz-user-select:none; -ms-user-select: none;
+  margin:auto;
+}
+.lengthswitch-checkbox {
+  display: none;
+}
+.lengthswitch-label {
+  display: block; overflow: hidden; cursor: pointer;
+  border: 2px solid #999999; border-radius: 50px;
+}
+.lengthswitch-inner {
+  display: block; width: 200%; margin-left: -100%;
+  transition: margin 0.3s ease-in 0s;
+}
+.lengthswitch-inner:before, .lengthswitch-inner:after {
+  display: block; float: left; width: 50%; height: 20px; padding: 0; line-height: 20px;
+  font-size: 15px; color: white; font-family: Trebuchet, Arial, sans-serif; font-weight: bold;
+  box-sizing: border-box;
+}
+.lengthswitch-inner:before {
+  content: "SHORT";
+  padding-left: 10px;
+  background-color: #FFAE00; color: #FFFFFF;
+}
+.lengthswitch-inner:after {
+  content: "SHORTER";
+  padding-right: 10px;
+  background-color: #EEEEEE; color: #999999;
+  text-align: right;
+}
+.lengthswitch-switch {
+  display: block; width: 18px; margin: 1px;
+  background: #FFFFFF;
+  position: absolute; top: 0; bottom: 0;
+  right: 91px;
+  border: 2px solid #999999; border-radius: 50px;
+  transition: all 0.3s ease-in 0s;
+}
+.lengthswitch-checkbox:checked + .lengthswitch-label .lengthswitch-inner {
+  margin-left: 0;
+}
+.lengthswitch-checkbox:checked + .lengthswitch-label .lengthswitch-switch {
+  right: 0px;
+}
+/*---*/
+
+/*---*/
+.trainswitch {
+  position: relative; width: 115px;
+  -webkit-user-select:none; -moz-user-select:none; -ms-user-select: none;
+  margin:auto;
+}
+.trainswitch-checkbox {
+  display: none;
+}
+.trainswitch-label {
+  display: block; overflow: hidden; cursor: pointer;
+  border: 2px solid #999999; border-radius: 50px;
+}
+.trainswitch-inner {
+  display: block; width: 200%; margin-left: -100%;
+  transition: margin 0.3s ease-in 0s;
+}
+.trainswitch-inner:before, .trainswitch-inner:after {
+  display: block; float: left; width: 50%; height: 20px; padding: 0; line-height: 20px;
+  font-size: 15px; color: white; font-family: Trebuchet, Arial, sans-serif; font-weight: bold;
+  box-sizing: border-box;
+}
+.trainswitch-inner:before {
+  content: "YES";
+  padding-left: 10px;
+  background-color: #FFAE00; color: #FFFFFF;
+}
+.trainswitch-inner:after {
+  content: "NO";
+  padding-right: 10px;
+  background-color: #EEEEEE; color: #999999;
+  text-align: right;
+}
+.trainswitch-switch {
+  display: block; width: 18px; margin: 1px;
+  background: #FFFFFF;
+  position: absolute; top: 0; bottom: 0;
+  right: 91px;
+  border: 2px solid #999999; border-radius: 50px;
+  transition: all 0.3s ease-in 0s;
+}
+.trainswitch-checkbox:checked + .trainswitch-label .trainswitch-inner {
+  margin-left: 0;
+}
+.trainswitch-checkbox:checked + .trainswitch-label .trainswitch-switch {
+  right: 0px;
+}
+/*--*/

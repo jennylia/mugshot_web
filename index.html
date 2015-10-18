@@ -25,16 +25,33 @@
         <p><a href="https://github.com/eirikb/gifie">The Gifie Source @ GitHub</a></p>
         <h2 id="imgur-upload">Processing ... Box busy :|</h2>
         <p id="answers"></p>
+        <br />
+        Quality
+        <div class="onoffswitch">
+          <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch" checked>
+          <label class="onoffswitch-label" for="myonoffswitch">
+            <span class="onoffswitch-inner"></span>
+            <span class="onoffswitch-switch"></span>
+          </label>
+        </div>
+        <br />
+        Length
+        <div class="lengthswitch">
+          <input type="checkbox" name="lengthswitch" class="lengthswitch-checkbox" id="mylengthswitch" checked>
+          <label class="lengthswitch-label" for="mylengthswitch">
+            <span class="lengthswitch-inner"></span>
+            <span class="lengthswitch-switch"></span>
+          </label>
+        </div>
+        <br />
         <div class="group">
-          <label>Quality</label>
-          <div class="btn-group" data-toggle="buttons">
-            <label class="btn btn-sm btn-default">
-              <input id="quality-bad" name="quality" type="radio"> Bad
-            </label>
-            <label class="btn btn-sm btn-default active">
-              <input name="quality" type="radio" checked="checked"> Crap
-            </label>
-          </div>
+          <label>Training</label>
+          <label>You must fill out the owner's name in training mode.</label>
+
+          <label>Mug Owner's Name</label>
+          <!-- <label class="btn btn-sm btn-default"> -->
+          <input id="mugOwner" type="text">
+          <!-- </label> -->
         </div>
         <div class="group">
           <label>Length</label>
@@ -45,19 +62,7 @@
             <label class="btn btn-sm btn-default">
               <input name="length" type="radio"> Shorter
             </label>
-        
           </div>
-       
-        <div class="group">
-          <label>Training</label>
-          <label>You must fill out the owner's name in training mode.</label>
-
-          <label>Mug Owner's Name</label>
-                <!-- <label class="btn btn-sm btn-default"> -->
-              <input id="mugOwner" type="text"> 
-            <!-- </label> -->
-       </div>
-
         </div>
         <div class="group">
           <div id="error" class="alert alert-danger">
