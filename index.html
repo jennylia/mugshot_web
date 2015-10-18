@@ -13,6 +13,11 @@
 
     <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
     <link href='main.css' rel='stylesheet' type='text/css'>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script src="//cdn.firebase.com/v0/firebase.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/spin.js/1.2.7/spin.min.js"></script>
+    <script src="sha256.js"></script>
+    <script src="firepano.js"></script>
   </head>
   <body>
     <div class="title">A shop for blue mugs</div>
@@ -48,6 +53,21 @@ http://www.woodenurecover.com/assets/images/Coffe-Mugs/Blue-Recovery-Mug.jpg" al
     <div class="new-car-form">
       <input type="text" id="new-mug" placeholder="Your mug">
       <button onclick="mugSubmit()">Submit Mug</button>
+    </div>
+    <div class="new-car-form">
+      <br/>
+      <button onclick="displayTags()">Display Tags</button>
+    </div>
+        <div class="new-car-form">
+      <br/>
+      <button onclick="displayTags()">FireBase Imgur Conversion</button>
+    </div>
+    <div class="new-car-form">
+      <div id="spin"></div>
+      <div class="title">Upload</div>
+      <input type="file" accept="image/*" capture="camera" id="file-upload">
+      <br/>
+      <img class="pano" id="pano" />
     </div>
 
   </body>

@@ -29,6 +29,21 @@ function train() {
   );
 }
 
+function displayTags(){
+  // var picUrl = "http://www.clarifai.com/static/img_ours/metro-north.jpg";
+  var picUrl = "http://i.imgur.com/nogScVY.jpg";
+  var appToken = "QL5sg8NV0Q9rhdJhH1lZapL0fydnHF";
+  var baseUrl = "https://api.clarifai.com/v1/tag/?url=";
+  $.ajax({
+         url: baseUrl + picUrl,
+     
+         type: "GET",
+         beforeSend: function(xhr){xhr.setRequestHeader('Authorization', 'Bearer ' + appToken);},
+         success: function(data) { console.log(data); }
+      });
+ 
+}
+
 function predict(imgurl) {
   clarifai.predict(imgurl, 'jennylian', callback)
   .then(function(obj) {
