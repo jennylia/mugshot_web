@@ -40,7 +40,13 @@ function displayTags(url){
      
          type: "GET",
          beforeSend: function(xhr){xhr.setRequestHeader('Authorization', 'Bearer ' + appToken);},
-         success: function(data) { console.log(data); }
+         success: function(data) { 
+
+
+
+          $('#answers').text(data.results[0].result.tag.classes);
+          console.log(data); 
+        }
       });
  
 }
