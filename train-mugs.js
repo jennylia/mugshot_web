@@ -1,6 +1,6 @@
 /* Yolo */
 var clarifai;
-
+var mugShotPhoto;
 $(document).ready(function() {
   clarifai = new Clarifai({
     'clientId': '35jcg0WIW8KDHG5TKA9D61-XB_LsDPc442OWyuRl',
@@ -29,9 +29,10 @@ function train() {
   );
 }
 
-function displayTags(){
+function displayTags(url){
   // var picUrl = "http://www.clarifai.com/static/img_ours/metro-north.jpg";
-  var picUrl = "http://i.imgur.com/nogScVY.jpg";
+  // var picUrl = "http://i.imgur.com/bphqBAT.jpg";
+  var picUrl = url;
   var appToken = "QL5sg8NV0Q9rhdJhH1lZapL0fydnHF";
   var baseUrl = "https://api.clarifai.com/v1/tag/?url=";
   $.ajax({
