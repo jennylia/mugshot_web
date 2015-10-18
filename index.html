@@ -17,18 +17,15 @@
     <script src="sweetalert.min.js"></script>
     <link rel="stylesheet" type="text/css" href="sweetalert.css">
 
-
-
-
     <title>Jenny's Mug Stand</title>
     <script type="text/javascript" src="clarifai-basic.js"></script>
     <script type="text/javascript" src="train-mugs.js"></script>
   </head>
   <body>
 
-    <div class="container">
-      <div>
-        <h1>Mug Photo Booth</h1>
+    <header>MugShot</header>
+      <div id="photo-booth">
+        <h1 id="pb-title">Mug Photo Booth</h1>
         <p>Mug gif to find out who it belongs to</p>
         <p><a href="https://github.com/eirikb/gifie">The Gifie Source @ GitHub</a></p>
         <h2 id="imgur-upload">Processing ... Box busy :|</h2>
@@ -55,7 +52,6 @@
             </label>
         
           </div>
-        </div>
        
         <div class="group">
           <label>Training</label>
